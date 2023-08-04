@@ -1,0 +1,33 @@
+#app {
+  height: 100vh;
+}
+
+/* 给 body 设定 assets/mbg.png 为背景，自适应 */
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(assets/mbg.png);
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url(assets/dbg.png);
+  }
+}
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.n-layout-scroll-container {
+  background: rgba(240, 255, 255, 0);
+}
+.n-layout.n-layout--static-positioned {
+  background: rgba(240, 255, 255, 0);
+}
+.n-input {
+  --n-color: rgba(255 255 255,0) !important;
+}
+.n-base-selection .n-base-selection-label {
+  --n-color: rgba(255 255 255,0) !important;
+}
