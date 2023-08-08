@@ -16,18 +16,23 @@
 body {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; 
 }
 
 .n-layout-scroll-container {
   background: rgba(240, 255, 255, 0);
+  width: 100%;
 }
 .n-layout.n-layout--static-positioned {
   background: rgba(240, 255, 255, 0);
 }
-.n-input {
+/* .n-input {
   --n-color: rgba(255 255 255,0) !important;
 }
 .n-base-selection .n-base-selection-label {
   --n-color: rgba(255 255 255,0) !important;
+} */
+.n-notification {
+  backdrop-filter: blur(22px) !important;
+  background: #f0f8ff4f !important;
 }

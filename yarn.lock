@@ -239,6 +239,11 @@
     "@vue/compiler-dom" "3.3.4"
     "@vue/shared" "3.3.4"
 
+"@vue/devtools-api@^6.5.0":
+  version "6.5.0"
+  resolved "https://mirrors.cloud.tencent.com/npm/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
+  integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
+
 "@vue/language-core@1.8.8":
   version "1.8.8"
   resolved "https://mirrors.cloud.tencent.com/npm/@vue/language-core/-/language-core-1.8.8.tgz#5a8aa8363f4dfacdfcd7808a9926744d7c310ae6"
@@ -558,6 +563,21 @@ picocolors@^1.0.0:
   resolved "https://mirrors.cloud.tencent.com/npm/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
+pinia-plugin-persist@^1.0.0:
+  version "1.0.0"
+  resolved "https://mirrors.cloud.tencent.com/npm/pinia-plugin-persist/-/pinia-plugin-persist-1.0.0.tgz#fc696f225527f30bd5955109fafadd43c725e888"
+  integrity sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==
+  dependencies:
+    vue-demi "^0.12.1"
+
+pinia@^2.1.6:
+  version "2.1.6"
+  resolved "https://mirrors.cloud.tencent.com/npm/pinia/-/pinia-2.1.6.tgz#e88959f14b61c4debd9c42d0c9944e2875cbe0fa"
+  integrity sha512-bIU6QuE5qZviMmct5XwCesXelb5VavdOWKWaB17ggk++NUwQWWbP5YnsONTk3b752QkW9sACiR81rorpeOMSvQ==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
+    vue-demi ">=0.14.5"
+
 postcss@^8.1.10, postcss@^8.4.26:
   version "8.4.27"
   resolved "https://mirrors.cloud.tencent.com/npm/postcss/-/postcss-8.4.27.tgz#234d7e4b72e34ba5a92c29636734349e0d9c3057"
@@ -644,10 +664,22 @@ vue-audio-visual@^3.0.5:
     "@vueuse/core" "^9.1.0"
     vue "^3.2.37"
 
-vue-demi@*:
+vue-demi@*, vue-demi@>=0.14.5:
   version "0.14.5"
   resolved "https://mirrors.cloud.tencent.com/npm/vue-demi/-/vue-demi-0.14.5.tgz#676d0463d1a1266d5ab5cba932e043d8f5f2fbd9"
   integrity sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==
+
+vue-demi@^0.12.1:
+  version "0.12.5"
+  resolved "https://mirrors.cloud.tencent.com/npm/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
+  integrity sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==
+
+vue-router@^4.2.4:
+  version "4.2.4"
+  resolved "https://mirrors.cloud.tencent.com/npm/vue-router/-/vue-router-4.2.4.tgz#382467a7e2923e6a85f015d081e1508052c191b9"
+  integrity sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
 
 vue-template-compiler@^2.7.14:
   version "2.7.14"
