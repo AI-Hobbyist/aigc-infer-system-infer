@@ -15,12 +15,13 @@
     "pinia-plugin-persist": "^1.0.0",
     "vue": "^3.3.4",
     "vue-audio-visual": "^3.0.5",
+    "vue-cookies": "^1.8.3",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5",
+    "vite": "^4.4.8",
     "vue-tsc": "^1.8.5"
   }
 }

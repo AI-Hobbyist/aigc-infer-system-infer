@@ -27,9 +27,9 @@ const text = ref("")
 const sdp_dp = ref(0.2)
 const noise = ref(0.5)
 const noisew = ref(0.9)
-const length = ref(0.8)
-const format = ref("wav")
+const length = ref(1.0)
 const audio_url = ref("")
+const msg = ref("")
 // setInterval(() => console.log(options.value),500)
 
 const infer_fn = async () => {
@@ -42,20 +42,23 @@ const infer_fn = async () => {
     length: length.value,
     token: store.token as string,
   })
-  console.log(data);
   audio_url.value = data.audio
-  notification.success({content: "推理成功",duration: 3000})  
+  msg.value = data.message
+  notification.info({content: msg.value,duration: 10000})  
 }
 
 </script>
 
 <template>
+  <n-layout-content bordered class="layout-content" style="padding: 800px;padding-top: 50px;background: rgba(240, 255, 255, 0);">
   <n-form class="backdrop">
     <n-form-item label="文本">
       <n-input
         v-model:value="text"
         type="textarea"
-        placeholder="就在这理发店"
+        placeholder="4.0版本模型更新中，敬请期待！"
+        class = "text"
+        rows="17"
       />
     </n-form-item>
     <n-form-item label="角色">
@@ -98,12 +101,12 @@ const infer_fn = async () => {
       <n-gi span="0:24 768:12" style="display: flex;justify-content: flex-end;">
         <!-- <div> -->
           <!-- <div style="display: flex;margin-left: 10px;margin-right: 10px;flex-direction: column;justify-content: center;">格式</div> -->
-          <div><n-button type="primary" @click="infer_fn">即刻生成</n-button></div>
-          <div><n-select v-model:value="format" style="min-width: 100px;" size="medium" :options="[{label: 'wav', value: 'wav'},{label: 'mp3', value: 'mp3'}]" /></div>
+          <div><n-button type="primary" @click="infer_fn">合成！</n-button></div>
         <!-- </div> -->
       </n-gi>
     </n-grid>
   </n-form>
+</n-layout-content>
 </template>
 
 <style scoped>
@@ -121,45 +124,19 @@ const infer_fn = async () => {
   .layout-content {
     padding: 50px !important ;
   }
-  .footer-m {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .footer-d {
-    display: none;
-  }
 }
 @media screen and (min-width: 768px) {
   .layout-content {
-    padding: 800px;
-  }
-  .footer-m {
-    display: none;
-    /* padding-left: 50px; */
-  }
-  .footer-d {
-    /* 让 footer-d 的宽度只有 50% 的父元素宽度，并且居中于父元素 */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-  }
-  .footer {
-    --n-border-color: rgba(255, 255, 255, 0) !important;
-    background-color: rgba(255, 255, 255, 0.166);
-    backdrop-filter: blur(20px);
-  }
-  .header {
-    --n-border-color: rgba(255, 255, 255, 0) !important;
-    background-color: rgba(255, 255, 255, 0.166);
-    backdrop-filter: blur(20px);
+    padding: 0 20vw !important;
   }
 }
 
 .footer-d-t {
   text-align: center;
+}
+
+.text{
+  width: 1500px;
 }
 
 </style>
