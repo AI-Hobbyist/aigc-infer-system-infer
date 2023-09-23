@@ -3,7 +3,6 @@ import { Router, createRouter, createWebHashHistory } from "vue-router";
 import login from "./page/login.vue"
 import infer from "./page/infer.vue"
 import { useUserStore } from "./store";
-import { Pinia } from "pinia";
 
 interface Route {
   path: string;
@@ -17,26 +16,30 @@ const routes: Route[] = [
 ];
 
 let router: Router;
-
-export default (pinia: Pinia) => {
+export default () => {
   if (!router) {
     router = createRouter({
       history: createWebHashHistory(),
       routes, // `routes: routes` 的缩写
     });
 
-    console.log("create router");
-
-    const store = useUserStore(pinia);
+    const store = useUserStore();
     
     console.log(store);
+    // 检测 DEV
+    if (import.meta.env.DEV) {
+      // @ts-ignore
+      window.store = store;
+    }
 
     router.beforeEach((to, _from, next) => {
-      
-      if (!store.isLogin && to.path !== "/login") {
+      if (!store.isLogin.value && to.path !== "/login") {
         console.log("go login");
 
         next({ path: "/login" })
+      } else if(to.path !== "/infer") {
+        next({ path: "/infer" })
+        console.log("go infer");
       } else next()
     });
   }

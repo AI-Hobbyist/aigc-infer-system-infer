@@ -7,12 +7,16 @@ export default {
     })).data,
     async check() {
         const store = useUserStore()
-        const { data } = await axios.post('/login/status', { token: store.token })
+        const { data } = await axios.post('/login/status', { token: store.token.value })
         
-        if(data.status !== 1) {
-            store.token = undefined
+        if(data.is_ok !== 1) {
+            store.token.value = ""  
             return false
         }
         return true
+    },
+    async logout() {
+        const store = useUserStore()
+        store.token.value = ""
     }
 }

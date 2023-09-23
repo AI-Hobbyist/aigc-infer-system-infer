@@ -22,7 +22,8 @@ const options = computed(() => spks.value.map((spk: any) => {
   }
 }))
 
-const spk = ref(null)
+
+const spk = ref("")
 const text = ref("")
 const sdp_dp = ref(0.2)
 const noise = ref(0.5)
@@ -32,6 +33,12 @@ const audio_url = ref("")
 const msg = ref("")
 // setInterval(() => console.log(options.value),500)
 
+const autocomplete_options = computed(() => spks.value.filter((item: string) => item.includes(spk.value)).map((spk: any) => {
+  return {
+    label: spk,
+    value: spk
+  }
+}))
 const infer_fn = async () => {
   const data = await infer({
     text: text.value,
@@ -40,12 +47,16 @@ const infer_fn = async () => {
     noise: noise.value,
     noisew: noisew.value,
     length: length.value,
-    token: store.token as string,
+    token: store.token.value as string,
   })
   audio_url.value = data.audio
   msg.value = data.message
   notification.info({content: msg.value,duration: 10000})  
 }
+
+// 1 选择
+// 2 auto complete
+var spk_mode = ref(1)
 
 </script>
 
@@ -62,10 +73,20 @@ const infer_fn = async () => {
       />
     </n-form-item>
     <n-form-item label="角色">
-      <n-select v-model:value="spk" size="medium" :options="options" />
+      <n-select v-model:value="spk" size="medium" :options="options" v-if="spk_mode == 1"/>
+      <n-auto-complete
+        v-else
+        v-model:value="spk"
+        :input-props="{
+          autocomplete: 'disabled'
+        }"
+        :options="autocomplete_options"
+        placeholder="角色"
+      />
+      <n-button type="primary" @click="spk_mode = spk_mode == 1? 2: 1">切换到{{ spk_mode == 1? "查找模式": "选择模式" }}</n-button>
     </n-form-item>
     <!-- SDP/DP混合比 -->
-    <n-grid :cols="24" item-responsive>
+    <n-grid :cols="24" item-responsive>https://tts.ai-lab.top/audio/92ae2682b38dfec16575428c3622e31d.wav
       <n-gi span="0:24 768:12">
         <n-form-item-gi style="padding-left: 3px;padding-right: 3px;" label="SDP/DP 混合比">
           <!-- <n-select v-model:value="spk" size="medium" :options="options" /> -->

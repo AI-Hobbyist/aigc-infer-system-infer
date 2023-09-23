@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Block Yarn.lock for facilitating cross-border collaboration
+yarn.lock
