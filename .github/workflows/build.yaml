@@ -30,7 +30,7 @@ jobs:
     - name: Package Dist Folder
       run: |
         zip -r dist.zip dist # 将 dist 文件夹打包成 zip 文件
-        mv dist.zip $GITHUB_WORKSPACE/dist.zip # 将 zip 文件移动到工作目录
+        # mv dist.zip $GITHUB_WORKSPACE/dist.zip # 将 zip 文件移动到工作目录
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
