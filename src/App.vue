@@ -33,14 +33,14 @@ function open_link(){
 
         <n-layout-footer bordered class="footer" style="width: 100vw;position: fixed;bottom: 0;">
           <div class="footer-m">
-            <div>模型训练: <n-a href="https://space.bilibili.com/163056936">Stardust_减</n-a></div>
+            <div>模型训练: <n-a href="https://space.bilibili.com/6589795">红血球AE3803</n-a></div>
             <div>前端: <n-a href="https://space.bilibili.com/503423945">多玩幻灵qwq</n-a>、<n-a href="https://space.bilibili.com/6589795">红血球AE3803</n-a></div>
             <div>相关组织: <n-a href="https://github.com/AI-Hobbyist">AI-Hobbyist</n-a></div>
           </div>
           <div class="footer-d">
             <n-grid :cols="3">
               <n-gi class="footer-d-t">
-                <div>模型训练: <n-a href="https://space.bilibili.com/163056936">Stardust_减</n-a></div>
+                <div>模型训练: <n-a href="https://space.bilibili.com/6589795">红血球AE3803</n-a></div>
                 <div>前端: <n-a href="https://space.bilibili.com/503423945">多玩幻灵qwq</n-a>、<n-a href="https://space.bilibili.com/6589795">红血球AE3803</n-a></div>
               </n-gi>
               <n-gi class="footer-d-t">

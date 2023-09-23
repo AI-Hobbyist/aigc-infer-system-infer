@@ -56,7 +56,7 @@ const infer_fn = async () => {
       <n-input
         v-model:value="text"
         type="textarea"
-        placeholder="4.0版本模型更新中，敬请期待！"
+        placeholder="原神4.0版本模型测试中，本地推理整合包将在模型最终版发布时候发布 。反馈邮箱：aihobbyistorg@gmail.com"
         class = "text"
         rows="17"
       />

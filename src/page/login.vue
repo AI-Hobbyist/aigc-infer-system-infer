@@ -28,7 +28,7 @@ const login = async () => {
     if(data.token) {
         store.token = data.token
         notification.success({
-            content: "登录成功！\n友情提示：\n如果不喜欢在线推理，喜欢本地推理的话，可以点击右上角的 “整合包下载” 来下载本地推理整合包哦！",
+            content: "登录成功！\n友情提示：\n1. 如果不喜欢在线推理，喜欢本地推理的话，可以点击右上角的 “整合包下载” 来下载本地推理整合包哦！\n2. 原神4.0模型测试中，反馈邮箱：aihobbyistorg@gmail.com",
             duration: 5000
         })
         router.push("/infer")
