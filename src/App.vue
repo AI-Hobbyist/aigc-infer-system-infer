@@ -16,7 +16,7 @@ const open_link = () => {
 
 const logout = () => {
   user.logout()
-  router.push("/login")
+  router.push("/login?logout=true")
 }
 
 const reload = () => window.location.reload()

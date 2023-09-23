@@ -33,6 +33,7 @@ export default () => {
     }
 
     router.beforeEach((to, _from, next) => {
+      if(to.query.logout) next()
       if (!store.isLogin.value && to.path !== "/login") {
         console.log("go login");
 
