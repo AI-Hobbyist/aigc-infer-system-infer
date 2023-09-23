@@ -38,7 +38,7 @@ export default () => {
         console.log("go login");
 
         next({ path: "/login" })
-      } else if(to.path !== "/infer") {
+      } else if(to.path !== "/infer" && to.path !== "/login") {
         next({ path: "/infer" })
         console.log("go infer");
       } else next()
