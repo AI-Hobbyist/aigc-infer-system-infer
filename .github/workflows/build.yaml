@@ -1,0 +1,39 @@
+name: Build and Package
+
+on:
+  push:
+    branches:
+      - main # 触发条件：当代码推送到主分支时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # 在 Ubuntu 环境下运行
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2 # 检出存储库代码
+
+    - name: Delete yarn.lock
+      run: rm yarn.lock # 删除 yarn.lock 文件
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18 # 设置 Node.js 版本为 18.x
+
+    - name: Install Dependencies
+      run: yarn install # 使用 yarn 安装依赖
+
+    - name: Build
+      run: yarn build # 运行构建命令
+
+    - name: Package Dist Folder
+      run: |
+        zip -r dist.zip dist # 将 dist 文件夹打包成 zip 文件
+        mv dist.zip $GITHUB_WORKSPACE/dist.zip # 将 zip 文件移动到工作目录
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist # 构建产物的名称
+        path: $GITHUB_WORKSPACE/dist.zip # 上传的文件路径
