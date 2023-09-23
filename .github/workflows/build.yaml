@@ -36,4 +36,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: dist # 构建产物的名称
-        path: dist.zip # 上传的文件路径
+        path: dist # 上传的文件路径
