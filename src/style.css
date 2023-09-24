@@ -49,5 +49,5 @@ body {
 @font-face {
   font-family: myFont;
   /* TODO: Custom Font */
-  src: url();
+  src: url(GenshinFont.ttf);
 }
