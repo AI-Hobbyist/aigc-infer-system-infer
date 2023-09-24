@@ -4,7 +4,6 @@ import getSpks from "../api/spks";
 import { computed, ref } from "vue";
 import { useUserStore } from "../store";
 import { useNotification } from "naive-ui";
-import { ArrowBackOutline, ArrowForwardOutline } from '@vicons/ionicons5'
 const notification = useNotification();
 
 const spks = ref([]);
