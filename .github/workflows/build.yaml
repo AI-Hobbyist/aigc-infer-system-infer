@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 18 # 设置 Node.js 版本为 18.x
-
+  
     - name: Install Dependencies
       run: yarn install # 使用 yarn 安装依赖
 

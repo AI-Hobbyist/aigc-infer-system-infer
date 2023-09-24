@@ -166,10 +166,10 @@
   resolved "https://mirrors.cloud.tencent.com/npm/@types/lodash/-/lodash-4.14.196.tgz"
   integrity sha512-22y3o88f4a94mKljsZcanlNWPzO0uBsBdzLAngf2tp533LzZcQzb6+eZPJ+vCTt+bqF2XnvT9gejTLsAcJAJyQ==
 
-"@types/web-bluetooth@^0.0.16":
-  version "0.0.16"
-  resolved "https://mirrors.cloud.tencent.com/npm/@types/web-bluetooth/-/web-bluetooth-0.0.16.tgz"
-  integrity sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==
+"@vicons/ionicons5@^0.12.0":
+  version "0.12.0"
+  resolved "https://mirrors.cloud.tencent.com/npm/@vicons/ionicons5/-/ionicons5-0.12.0.tgz#c39fda04420dfae3b58053faf8aaf3555253299d"
+  integrity sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==
 
 "@vitejs/plugin-vue@^4.2.3":
   version "4.2.3"
@@ -313,28 +313,6 @@
   dependencies:
     "@volar/typescript" "~1.10.0"
     "@vue/language-core" "1.8.8"
-
-"@vueuse/core@^9.1.0":
-  version "9.13.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/@vueuse/core/-/core-9.13.0.tgz"
-  integrity sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==
-  dependencies:
-    "@types/web-bluetooth" "^0.0.16"
-    "@vueuse/metadata" "9.13.0"
-    "@vueuse/shared" "9.13.0"
-    vue-demi "*"
-
-"@vueuse/metadata@9.13.0":
-  version "9.13.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/@vueuse/metadata/-/metadata-9.13.0.tgz"
-  integrity sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==
-
-"@vueuse/shared@9.13.0":
-  version "9.13.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/@vueuse/shared/-/shared-9.13.0.tgz"
-  integrity sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==
-  dependencies:
-    vue-demi "*"
 
 async-validator@^4.0.7:
   version "4.2.5"
@@ -660,21 +638,6 @@ pify@^4.0.1:
   resolved "https://mirrors.cloud.tencent.com/npm/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
-pinia-plugin-persist@^1.0.0:
-  version "1.0.0"
-  resolved "https://mirrors.cloud.tencent.com/npm/pinia-plugin-persist/-/pinia-plugin-persist-1.0.0.tgz"
-  integrity sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==
-  dependencies:
-    vue-demi "^0.12.1"
-
-pinia@^2.1.6:
-  version "2.1.6"
-  resolved "https://mirrors.cloud.tencent.com/npm/pinia/-/pinia-2.1.6.tgz"
-  integrity sha512-bIU6QuE5qZviMmct5XwCesXelb5VavdOWKWaB17ggk++NUwQWWbP5YnsONTk3b752QkW9sACiR81rorpeOMSvQ==
-  dependencies:
-    "@vue/devtools-api" "^6.5.0"
-    vue-demi ">=0.14.5"
-
 postcss@^8.1.10, postcss@^8.4.26:
   version "8.4.27"
   resolved "https://mirrors.cloud.tencent.com/npm/postcss/-/postcss-8.4.27.tgz"
@@ -783,28 +746,10 @@ vooks@^0.2.12, vooks@^0.2.4:
   dependencies:
     evtd "^0.2.2"
 
-vue-audio-visual@^3.0.5:
-  version "3.0.5"
-  resolved "https://mirrors.cloud.tencent.com/npm/vue-audio-visual/-/vue-audio-visual-3.0.5.tgz"
-  integrity sha512-Xhtfoucnz0/CLdD5GlNnSdRkIAbXbpacRw/yoE5ubYj0p4Brc7EthfzDa2dCCibitFVrhvL+gtQeiY/nX4aV3Q==
-  dependencies:
-    "@vueuse/core" "^9.1.0"
-    vue "^3.2.37"
-
 vue-cookies@^1.8.3:
   version "1.8.3"
   resolved "https://registry.npmjs.org/vue-cookies/-/vue-cookies-1.8.3.tgz"
   integrity sha512-VBRsyRMVdahBgFfh389TMHPmDdr4URDJNMk4FKSCfuNITs7+jitBDhwyL4RJd3WUsfOYNNjPAkfbehyH9AFuoA==
-
-vue-demi@*, vue-demi@>=0.14.5:
-  version "0.14.5"
-  resolved "https://mirrors.cloud.tencent.com/npm/vue-demi/-/vue-demi-0.14.5.tgz"
-  integrity sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==
-
-vue-demi@^0.12.1:
-  version "0.12.5"
-  resolved "https://mirrors.cloud.tencent.com/npm/vue-demi/-/vue-demi-0.12.5.tgz"
-  integrity sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==
 
 vue-router@^4.2.4:
   version "4.2.4"
@@ -830,7 +775,7 @@ vue-tsc@^1.8.5:
     "@vue/typescript" "1.8.8"
     semver "^7.3.8"
 
-vue@^3.2.37, vue@^3.3.4:
+vue@^3.3.4:
   version "3.3.4"
   resolved "https://mirrors.cloud.tencent.com/npm/vue/-/vue-3.3.4.tgz"
   integrity sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==

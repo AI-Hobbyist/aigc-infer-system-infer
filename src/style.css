@@ -43,3 +43,11 @@ body {
   backdrop-filter: blur(22px) !important;
   background: #f0f8ff4f !important;
 }
+* {
+  font-family: myFont;
+}
+@font-face {
+  font-family: myFont;
+  /* TODO: Custom Font */
+  src: url();
+}
