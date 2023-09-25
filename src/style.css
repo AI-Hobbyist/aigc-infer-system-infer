@@ -5,7 +5,7 @@
 /* 给 body 设定 assets/mbg.png 为背景，自适应 */
 @media screen and (max-width: 768px) {
   body {
-    /* background-image: url(assets/bg.png); */
+    background-image: url(assets/bg.png);
     /* 搓个动画，5s一次，循环，让背景左右飘200px */
     animation: bg 60s linear infinite;
   }
@@ -23,7 +23,7 @@
 }
 @media screen and (min-width: 768px) {
   body {
-    /* background-image: url(assets/dbg.png); */
+    background-image: url(assets/dbg.jpg);
   }
 }
 body {

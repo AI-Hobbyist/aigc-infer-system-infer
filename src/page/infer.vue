@@ -26,9 +26,9 @@ const options = computed(() =>
 const spk = ref("");
 const text = ref("");
 const sdp_dp = ref(0.2);
-const noise = ref(0.5);
-const noisew = ref(0.9);
-const length = ref(1.0);
+const noise = ref(0.6);
+const noisew = ref(0.8);
+const length = ref(0.0);
 const audio_url = ref("");
 
 const isloading = ref(false);
@@ -54,7 +54,7 @@ const infer_fn = async () => {
     sdp_ratio: sdp_dp.value,
     noise: noise.value,
     noisew: noisew.value,
-    length: length.value,
+    length: (100 - length.value)/100,
     token: store.token.value as string,
   });
   audio_url.value = data.audio;
@@ -92,7 +92,8 @@ var spk_mode = ref(1);
         <n-input
           v-model:value="text"
           type="textarea"
-          placeholder="原神4.0版本模型测试中，本地推理整合包将在模型最终版发布时候发布 。反馈邮箱：aihobbyistorg@gmail.com"
+          placeholder="原神4.0版本模型测试中，本地推理整合包将在模型最终版发布时候发布 。
+反馈邮箱：aihobbyistorg@gmail.com"
           class="text"
           rows="17"
         />
@@ -130,7 +131,7 @@ var spk_mode = ref(1);
               v-model:value="sdp_dp"
               :step="0.1"
               :min="0.1"
-              :max="0.8"
+              :max="1.0"
             />
           </n-form-item-gi>
         </n-gi>
@@ -140,7 +141,7 @@ var spk_mode = ref(1);
             label="感情"
           >
             <!-- <n-select v-model:value="spk" size="medium" :options="options" /> -->
-            <n-slider v-model:value="noise" :min="0" :max="1.5" :step="0.1" />
+            <n-slider v-model:value="noise" :min="0.1" :max="2.0" :step="0.1" />
           </n-form-item-gi>
         </n-gi>
         <n-gi span="0:24 768:12">
@@ -151,8 +152,8 @@ var spk_mode = ref(1);
             <!-- <n-select v-model:value="spk" size="medium" :options="options" /> -->
             <n-slider
               v-model:value="noisew"
-              :min="0.5"
-              :max="1.5"
+              :min="0.1"
+              :max="2.0"
               :step="0.1"
             />
           </n-form-item-gi>
@@ -160,10 +161,10 @@ var spk_mode = ref(1);
         <n-gi span="0:24 768:12">
           <n-form-item-gi
             style="padding-left: 3px; padding-right: 3px"
-            label="语速"
+            label="语速(%)"
           >
             <!-- <n-select v-model:value="spk" size="medium" :options="options" /> -->
-            <n-slider v-model:value="length" :min="0.5" :max="2" :step="0.1" />
+            <n-slider v-model:value="length" :min="-99" :max="99" :step="1" />
           </n-form-item-gi>
         </n-gi>
       </n-grid>
