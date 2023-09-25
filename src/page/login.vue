@@ -24,11 +24,11 @@ const email = ref("")
 const router = useRouter()
 const store = useUserStore()
 const login = async () => {
-    const data = await user.login({email: email.value,password: pwd.value})
+    const data = await user.login({lang: "zh",email: email.value,password: pwd.value,mac: ""})
     if(data.token) {
         store.token.value = data.token
         notification.success({
-            content: "登录成功！\n友情提示：\n1. 如果不喜欢在线推理，喜欢本地推理的话，可以点击右上角的 “整合包下载” 来下载本地推理整合包哦！\n2. 原神4.0模型测试中，反馈邮箱：aihobbyistorg@gmail.com",
+            content: data.message.replace(/(?:\\r\\n|\\r|\\n)/g, '\n'),
             duration: 5000
         })
         router.push("/infer")

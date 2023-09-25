@@ -1,13 +1,13 @@
 import { useUserStore } from '../store';
 import axios from "./axios";
 export default {
-    login: async (data: { email: string, password: string }) => (await axios.post('/user_login', {
+    login: async (data: { lang: "zh", email: string, password: string, mac: "" }) => (await axios.post('/user_login', {
         email: data.email,
         pass: data.password
     })).data,
     async check() {
         const store = useUserStore()
-        const { data } = await axios.post('/login/status', { token: store.token.value })
+        const { data } = await axios.post('/status', { token: store.token.value })
         
         if(data.is_ok !== 1) {
             store.token.value = ""  

@@ -59,7 +59,7 @@ const infer_fn = async () => {
   });
   audio_url.value = data.audio;
   isloading.value = false;
-  notification.info({ content: data.message, duration: 10000 });
+  notification.info({ content: data.message.replace(/(?:\\r\\n|\\r|\\n)/g, '\n'), duration: 10000 });
 
 };
 
