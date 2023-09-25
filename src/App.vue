@@ -11,7 +11,7 @@ const checkToken = async () => {
 checkToken()
 
 const open_link = () => {
-  window.location.href='https://pan.zhjlfx.cn/Models/Vits/Packs';
+  window.location.href='https://pan.ai-hobbyist.org/Models/Vits/Packs';
 }
 
 const logout = () => {
