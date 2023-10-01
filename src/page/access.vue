@@ -3,9 +3,12 @@
     <div class="box">
         <!-- <div"> -->
         <n-space vertical class="input">
-            <div class="title">API Token</div>
-            <n-input v-model:value="acc_token" round  type="text" placeholder="Token" readonly="readonly"/>
-            <n-button type="primary" round style="width: 100%;" @click="open_link">返回</n-button>
+          <div class="title">API Token</div>
+          <!-- 显示的替换掉中间三位数 -->
+          <n-input v-model:value="acc_token" round  type="text" placeholder="Token" readonly="readonly"/>
+          <n-button type="warning" round style="width: 100%;" :loading="loading" @click="getAccessToken">获取</n-button>
+          <n-button type="primary" round style="width: 100%;" :loading="loading" v-if="!acc_token.includes('AccessToken')" @click="copy">复制</n-button>
+          <n-button type="primary" round style="width: 100%;" :loading="loading" @click="openLink">返回</n-button>
         </n-space>
     </div>
 </n-layout-content>
@@ -16,11 +19,32 @@ import user from '../api/user'
 import { useRouter } from 'vue-router';
 const router = useRouter()
 
-//const acc = await user.get_access_key()
+const acc_token = ref("点击下方按钮重新获取 AccessToken")
 
-const acc_token = ref("123")
-const open_link = () => {
+const loading = ref(false)
+
+const getAccessToken = async () => {
+  loading.value = true
+  await user.get_access_token().then((token) => acc_token.value = token)
+  loading.value = false
+}
+
+const openLink = () => {
   router.push("/infer")
+}
+
+const copy = () => {
+  const input = document.createElement('input');
+  input.setAttribute('readonly', 'readonly');
+  input.setAttribute('value', acc_token.value);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 9999);
+  if (document.execCommand('copy')) {
+    document.execCommand('copy');
+    console.log('复制成功');
+  }
+  document.body.removeChild(input);
 }
 </script>
 <style scoped>
