@@ -15,6 +15,11 @@ export default {
         }
         return true
     },
+    async get_access_token(){
+        const store = useUserStore()
+        const  { data } = await axios.post('/refresh_access_token', { token: store.token.value })
+        return data.acc_token
+    },
     async logout() {
         const store = useUserStore()
         store.token.value = ""
