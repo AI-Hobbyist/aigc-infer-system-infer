@@ -19,6 +19,10 @@ const logout = () => {
   router.push("/login?logout=true")
 }
 
+const get_token = () => {
+  checkToken()
+  router.push("/apikey")
+}
 const reload = () => window.location.reload()
 
 </script>
@@ -35,7 +39,8 @@ const reload = () => window.location.reload()
               <p class="logo"><img src="/logo.png"></p>
             </span>
             <p class="nav">
-              <n-button type="primary" @click="open_link">整合包下载</n-button>
+              <n-button type="primary" @click="get_token">获取API Token</n-button>&nbsp;
+              <n-button type="primary" @click="open_link">整合包下载</n-button>&nbsp;
               <n-button circle type="primary" @click="logout">
                 <template #icon>
                   <n-icon>

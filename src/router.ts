@@ -2,6 +2,7 @@ import { Router, createRouter, createWebHashHistory } from "vue-router";
 
 import login from "./page/login.vue"
 import infer from "./page/infer.vue"
+import acc from "./page/access.vue"
 import { useUserStore } from "./store";
 
 interface Route {
@@ -12,7 +13,8 @@ interface Route {
 const routes: Route[] = [
   // { path: '/accounts', component: Accounts },
   { path: "/infer", component: infer},
-  { path: "/login", component: login}
+  { path: "/login", component: login},
+  { path: "/apikey", component: acc}
 ];
 
 let router: Router;
@@ -36,12 +38,12 @@ export default () => {
       if(to.query.logout) next()
       if (!store.isLogin.value && to.path !== "/login") {
         console.log("go login");
-
         next({ path: "/login" })
-      } else if(to.path !== "/infer" && to.path !== "/login") {
+
+      } else if(to.path !== "/infer" && to.path !== "/apikey" && to.path !== "/login") {
         next({ path: "/infer" })
         console.log("go infer");
-      } else next()
+      } else next();
     });
   }
   return router;
