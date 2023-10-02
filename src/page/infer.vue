@@ -95,7 +95,7 @@ var spk_mode = ref(1);
           placeholder="原神4.0版本模型测试中，本地推理整合包将在模型最终版发布时候发布 。
 反馈邮箱：aihobbyistorg@gmail.com"
           class="text"
-          rows="17"
+          rows="10"
         />
       </n-form-item>
       <n-form-item label="角色">
