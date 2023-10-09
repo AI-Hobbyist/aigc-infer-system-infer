@@ -14,6 +14,10 @@ const open_link = () => {
   window.location.href='https://pan.ai-hobbyist.org/Models/Vits/Packs';
 }
 
+const open_status = () => {
+  window.location.href='https://status.ai-hobbyist.org/status/infer-apis';
+}
+
 const logout = () => {
   user.logout()
   router.push("/login?logout=true")
@@ -39,7 +43,8 @@ const reload = () => window.location.reload()
               <p class="logo"><img src="/logo.png"></p>
             </span>
             <p class="nav">
-              <n-button type="primary" @click="get_token">获取API Token</n-button>&nbsp;
+              <n-button type="primary" @click="get_token">Token</n-button>&nbsp;
+              <n-button type="primary" @click="open_status">状态</n-button>&nbsp;
               <n-button type="primary" @click="open_link">整合包下载</n-button>&nbsp;
               <n-button circle type="primary" @click="logout">
                 <template #icon>
