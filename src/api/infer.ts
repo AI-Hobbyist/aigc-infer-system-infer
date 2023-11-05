@@ -1,7 +1,11 @@
 import axios from "axios"
 
 interface Param {
+    lang: string;
+    appid: number;
+    type: string;
     token: string;
+    mac: string;
     speaker: string;
     text: string;
     sdp_ratio: number;
@@ -11,7 +15,7 @@ interface Param {
 }
 export default async (param: Param) => {
     document.title = "[正在合成] 原神/星穹铁道语音合成 - AI-Hobbyist"
-    const { data } = await axios.post("https://ttsol.ai-lab.top", param)
+    const { data } = await axios.post("https://tirs.ai-lab.top/api/ex/vits", param)
     document.title = "[合成完毕!] 原神/星穹铁道语音合成 - AI-Hobbyist"
     let tmp_handler: any;
     window.addEventListener("blur", tmp_handler = () => {

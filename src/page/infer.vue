@@ -49,6 +49,10 @@ const autocomplete_options = computed(() =>
 const infer_fn = async () => {
   isloading.value = true;
   const data = await infer({
+    lang: "zh",
+    appid: 0,
+    type: "online",
+    mac: "",
     text: text.value,
     speaker: spk.value as unknown as string,
     sdp_ratio: sdp_dp.value,
@@ -92,8 +96,7 @@ var spk_mode = ref(1);
         <n-input
           v-model:value="text"
           type="textarea"
-          placeholder="原神4.0版本模型测试中，本地推理整合包将在模型最终版发布时候发布 。
-反馈邮箱：aihobbyistorg@gmail.com"
+          placeholder="在线推理后端已更新，更换了更快的后端，合成速度更快"
           class="text"
           rows="10"
         />
