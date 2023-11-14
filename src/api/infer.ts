@@ -2,10 +2,8 @@ import axios from "axios"
 
 interface Param {
     lang: string;
-    appid: number;
-    type: string;
+    appid: string;
     token: string;
-    mac: string;
     speaker: string;
     text: string;
     sdp_ratio: number;

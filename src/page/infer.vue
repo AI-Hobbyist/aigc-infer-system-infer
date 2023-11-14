@@ -50,9 +50,7 @@ const infer_fn = async () => {
   isloading.value = true;
   const data = await infer({
     lang: "zh",
-    appid: 0,
-    type: "online",
-    mac: "",
+    appid: "9tuof1o8y7ni8h3e",
     text: text.value,
     speaker: spk.value as unknown as string,
     sdp_ratio: sdp_dp.value,
