@@ -24,19 +24,27 @@ const email = ref("")
 const router = useRouter()
 const store = useUserStore()
 const login = async () => {
-    const data = await user.login({lang: "zh",email: email.value,password: pwd.value,mac: ""})
-    if(data.token) {
-        store.token.value = data.token
-        notification.success({
-            content: data.message.replace(/(?:\\r\\n|\\r|\\n)/g, '\n'),
-            duration: 5000
-        })
-        router.push("/infer")
-    } else {
+    try {
+        const data = await user.login({lang: "zh",email: email.value,password: pwd.value,mac: ""})
+        if(data.token) {
+            store.token.value = data.token
+            notification.success({
+                content: data.message.replace(/(?:\\r\\n|\\r|\\n)/g, '\n'),
+                duration: 5000
+            })
+            router.push("/infer")
+        } else {
+            notification.error({
+                content: data.message,
+                duration: 3000
+            })
+        }
+    } catch(e) {
         notification.error({
-            content: data.message,
+            content: "API 调用失败，请联系网站维护者",
             duration: 3000
         })
+        console.error(e)
     }
 }
 

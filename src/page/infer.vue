@@ -46,23 +46,31 @@ const autocomplete_options = computed(() =>
       };
     })
 );
-const infer_fn = async () => {
-  isloading.value = true;
-  const data = await infer({
-    lang: "zh",
-    appid: "9tuof1o8y7ni8h3e",
-    text: text.value,
-    speaker: spk.value as unknown as string,
-    sdp_ratio: sdp_dp.value,
-    noise: noise.value,
-    noisew: noisew.value,
-    length: (100 - length.value)/100,
-    token: store.token.value as string,
-  });
-  audio_url.value = data.audio;
-  isloading.value = false;
-  notification.info({ content: data.message.replace(/(?:\\r\\n|\\r|\\n)/g, '\n'), duration: 10000 });
 
+const infer_fn = async () => {
+  try {
+    isloading.value = true;
+    const data = await infer({
+      lang: "zh",
+      appid: "9tuof1o8y7ni8h3e",
+      text: text.value,
+      speaker: spk.value as unknown as string,
+      sdp_ratio: sdp_dp.value,
+      noise: noise.value,
+      noisew: noisew.value,
+      length: (100 - length.value)/100,
+      token: store.token.value as string,
+    });
+    audio_url.value = data.audio;
+    isloading.value = false;
+    notification.info({ content: data.message.replace(/(?:\\r\\n|\\r|\\n)/g, '\n'), duration: 10000 });
+  } catch(e) {
+    notification.error({
+      content: "API 调用失败，请联系网站维护者",
+      duration: 3000
+    })
+    console.error(e)
+  }
 };
 
 const onAudioCanplay = (payload: Event) => {
