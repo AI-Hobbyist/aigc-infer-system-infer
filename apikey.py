@@ -4,10 +4,6 @@ from requests import post, get
 from pathlib import Path
 api = "https://infer.acgnai.top"
 
-if not os.path.exists("./avatar"):
-        Path("./avatar").mkdir(parents=True)
-
-
 def login_func(account,password):
     headers = {'Content-Type': 'application/json'}
     login = {"account": account, "password": password}
@@ -56,6 +52,7 @@ with gr.Blocks() as app:
                 with gr.Column(scale=3):
                     with gr.Column(variant="panel"):
                         gr.Markdown("## <center>账号登录</center>")
+                        gr.Markdown("<font size=3>[**注册账号**](https://reg.ai-hobbyist.org/)</font>")
                         acccount = gr.Textbox(label="账号",placeholder="请输入你的账号，邮箱和密码均可",max_lines=1)
                         password = gr.Textbox(label="密码",placeholder="请输入你的密码",max_lines=1,type="password")
                         login = gr.Button("登录")
