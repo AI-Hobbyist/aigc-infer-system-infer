@@ -76,24 +76,8 @@ with gr.Blocks() as app:
                             with gr.Column(scale=5):
                                 access_token = gr.Textbox(label="访问令牌",interactive=False, max_lines=1)
                                 update_token = gr.Button("刷新令牌",variant="primary")
-                with gr.Row():
-                    with gr.Tab("在线推理链接集合(点击访问)"):
-                        with gr.Row():
-                            url1 = gr.Button("星穹铁道Bert-Vits2多国语言版在线推理")
-                            url2 = gr.Button("二游Bert-Vits2中文特化版在线推理")
-                            url3 = gr.Button("待更新")
-                            url4 = gr.Button("待更新")
-                        with gr.Row():
-                            url5 = gr.Button("待更新")
-                            url6 = gr.Button("待更新")
-                            url7 = gr.Button("待更新")
-                            url8 = gr.Button("待更新")
-    link1 = gr.State("https://bv2sr.acgnai.top")
-    link2 = gr.State("https://bv-cn.acgnai.top")
     login.click(login_func,inputs=[acccount,password],outputs=[u_token])
     update_token.click(get_access_token,inputs=[u_token],outputs=[access_token])
-    url1.click(open_website,inputs=[link1])
-    url2.click(open_website,inputs=[link2])
 
 app.queue(default_concurrency_limit=1)
 app.launch(show_api=False,server_port=12345)
