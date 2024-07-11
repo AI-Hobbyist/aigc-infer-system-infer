@@ -19,6 +19,7 @@ def infer(access_token, text, speaker, language, style_text, style_weight, cut_b
         "type": "tts",
         "brand": "bert-vits2",
         "name": "sr",
+        "method": "webui",
         "access_token": access_token,
         "prarm": {
             "text": text,

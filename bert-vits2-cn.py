@@ -18,6 +18,7 @@ def infer(access_token, text, speaker, cut_by_sent, interval_between_sent, inter
         "type": "tts",
         "brand": "bert-vits2-cn",
         "name": "anime",
+        "method": "webui",
         "access_token": access_token,
         "prarm": {
             "text": text,
