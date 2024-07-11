@@ -65,6 +65,7 @@
         "type": "tts",
         "brand": "bert-vits2",
         "name": "sr",
+        "method": "api",
         "prarm": {
                 "speaker": "三月七【中】",
                 "text": "测试语音合成。",

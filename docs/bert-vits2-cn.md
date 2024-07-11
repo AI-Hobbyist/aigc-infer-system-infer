@@ -67,6 +67,7 @@
     "type": "tts",
     "brand": "bert-vits2-cn",
     "name": "anime",
+    "method": "api",
     "prarm": {
         "speaker": "纳西妲【原神】",
         "text": "测试语音合成。",
