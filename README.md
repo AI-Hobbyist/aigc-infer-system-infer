@@ -1,5 +1,5 @@
-# aigc-infer-system-frontend
-(开发中)AI在线推理平台。适用于TTS、SVC等等的在线推理，此仓库为前端。
+# aigc-infer-system-infer
+(开发中)AI在线推理平台。适用于TTS、SVC等等的在线推理，此仓库为推理前端。
 
 **平台后端：**[https://github.com/AI-Hobbyist/aigc-infer-system-backend](https://github.com/AI-Hobbyist/aigc-infer-system-backend)
 
