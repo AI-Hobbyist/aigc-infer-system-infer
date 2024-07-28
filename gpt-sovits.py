@@ -76,7 +76,7 @@ with gr.Blocks(title="原神、星穹铁道、鸣潮语音合成") as app:
                                     speaker = gr.Dropdown(label="角色",choices=speakers,interactive=True,value=speakers[0]),
                                     emotion = gr.Dropdown(label="情感",choices=emotions,interactive=True,value="中立")
                                     get_spk = gr.Button("刷新角色与情感列表", variant="primary")
-                                    speaker[0].change(update_emotions, inputs=speaker, outputs=emotion)
+                                    speaker[0].change(update_emotions, inputs=speaker[0], outputs=emotion)
                                     get_spk.click(refresh_spk_list)
                         with gr.Row():
                             with gr.Tab(label="语言设置"):
