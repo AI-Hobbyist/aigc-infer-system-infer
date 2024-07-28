@@ -47,7 +47,8 @@ def read_markdown(file):
     content = Path(file).read_text(encoding="utf-8")
     return content
 
-with gr.Blocks() as app:
+with gr.Blocks(title="原神、星穹铁道、鸣潮语音合成") as app:
+    gr.Markdown("## <center>原神、星穹铁道、鸣潮 [Bert-VITS2中文特化版](https://github.com/fishaudio/Bert-VITS2/releases/tag/Extra-v2) 在线语音合成</center>")
     speakers = get_speaker_list()
     with gr.Tabs(selected="接口调用"):
         with gr.TabItem("推理"):
