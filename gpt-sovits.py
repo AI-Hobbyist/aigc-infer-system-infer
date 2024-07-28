@@ -11,10 +11,6 @@ def get_speaker_list():
     data = json.loads(response.text)
     return data["spklist"]
 
-spk_list = get_speaker_list()
-speakers = list(spk_list.keys())
-emotions = list(set([emotion for emotions in spk_list.values() for emotion in emotions]))
-
 def update_emotions(speaker):
     return gr.update(choices=spk_list[speaker])
 
@@ -25,6 +21,8 @@ def update_speakers():
     emotions = list(set([emotion for emotions in spk_list.values() for emotion in emotions]))
     gr.Info("角色以及情感列表已刷新！")
     return gr.update(choices=speakers), gr.update(choices=emotions)
+
+update_speakers()
 
 def infer(access_token, speaker, emotion, text, text_language, top_k, top_p, temperature, speed):
     headers = {"content-type": "application/json"}
