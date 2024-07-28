@@ -11,17 +11,20 @@ def get_speaker_list():
     data = json.loads(response.text)
     return data["spklist"]
 
-def refresh_spk_list():
-    global spk_list
-    spk_list = get_speaker_list()
-    gr.Info("角色以及情感列表已刷新！")
-
 spk_list = get_speaker_list()
 speakers = list(spk_list.keys())
 emotions = list(set([emotion for emotions in spk_list.values() for emotion in emotions]))
 
 def update_emotions(speaker):
     return gr.update(choices=spk_list[speaker])
+
+def update_speakers():
+    global spk_list, speakers, emotions
+    spk_list = get_speaker_list()
+    speakers = list(spk_list.keys())
+    emotions = list(set([emotion for emotions in spk_list.values() for emotion in emotions]))
+    gr.Info("角色以及情感列表已刷新！")
+    return gr.update(choices=speakers), gr.update(choices=emotions)
 
 def infer(access_token, speaker, emotion, text, text_language, top_k, top_p, temperature, speed):
     headers = {"content-type": "application/json"}
@@ -74,10 +77,10 @@ with gr.Blocks(title="原神、星穹铁道、鸣潮语音合成") as app:
                             with gr.Tab(label="角色与情感"):
                                 with gr.Row():
                                     speaker = gr.Dropdown(label="角色",choices=speakers,interactive=True,value=speakers[0]),
-                                    emotion = gr.Dropdown(label="情感",choices=emotions,interactive=True,value="中立")
+                                    emotion = gr.Dropdown(label="情感",choices=emotions,interactive=True,value="中立_neutral")
                                     get_spk = gr.Button("刷新角色与情感列表", variant="primary")
                                     speaker[0].change(update_emotions, inputs=speaker[0], outputs=emotion)
-                                    get_spk.click(refresh_spk_list)
+                                    get_spk.click(fn=update_speakers,outputs=[speaker[0],emotion])
                         with gr.Row():
                             with gr.Tab(label="语言设置"):
                                 with gr.Row():
