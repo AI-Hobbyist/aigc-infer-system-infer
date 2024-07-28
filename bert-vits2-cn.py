@@ -33,7 +33,7 @@ def infer(access_token, text, speaker, cut_by_sent, interval_between_sent, inter
             "text_prompt": text_prompt
         }
     }
-    response = post(f"{api}/infer/gen", headers=headers, data=json.dumps(content))
+    response = post(f"{api}/infer/gen", headers=headers, data=json.dumps(content),timeout=86400)
     res = json.loads(response.text)
     if res["audio"] is None:
         gr.Warning(res["message"])
