@@ -101,4 +101,4 @@ with gr.Blocks(title="原神、星穹铁道、鸣潮语音合成") as app:
 
     
 app.queue(default_concurrency_limit=1)
-app.launch(show_api=False,server_port=12347)
+app.launch(show_api=False,server_port=12348)
