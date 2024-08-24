@@ -73,16 +73,22 @@
             "emotion": "中立",
             "text": "测试语音合成。",
             "text_language":"中文",
-            "audio_url": "https://gsv.ai-lab.top",
+            "text_split_method": "按标点符号切",
+            "fragment_interval": 0.3,
+            "batch_size": 1,
+            "batch_threshold": 0.75,
+            "parallel_infer": true,
+            "split_bucket": true,
             "top_k": 10,
             "top_p": 1.0,
             "temperature": 1.0,
-            "speed": 1.0
+            "speed_factor": 1.0
     }
 }
 ```
 
 ### **参数说明**
+#### 基本参数
 
 **access_token**：访问令牌
 
@@ -94,13 +100,33 @@
 
 **text_language**：语言（可选：中文、英语、日语、中英混合、日英混合、自动检测）
 
+#### 切分方式
+
+**text_split_method**：切分方式（可选：不切、凑四句一切、凑50字一切、按中文句号。切、按英文句号.切、按标点符号切）
+
+**fragment_interval**：分段间隔（秒，范围：0.01 ~ 1.0）
+
+#### 并行推理
+
+**batch_size**：批量大小（范围：1 ~ 200）
+
+**batch_threshold**：批处理阈值（范围：0.0 ~ 1.0）
+
+**parallel_infer**：启用并行推理（True、False）
+
+**split_bucket**：数据分桶（True、False）
+
+#### 合成参数
+
 **top_k**：前k个采样（范围：1 ~ 100）
 
 **top_p**：累计概率采样（范围：0.01 ~ 1.0）
 
 **temperature**：温度系数（范围：0.01 ~ 1.0）
 
-**speed**：语速（范围：0.01 ~ 2.0）
+**repetition_penalty**：重复惩罚（范围：0.0 ~ 2.0）
+
+**speed_factor**：语速（范围：0.01 ~ 2.0）
 
 ### **返回说明**
 
