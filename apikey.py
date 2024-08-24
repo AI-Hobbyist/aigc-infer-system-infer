@@ -69,7 +69,7 @@ with gr.Blocks() as app:
                         gr.Markdown("# <center>注意事项</center>")
                         gr.Markdown("<font size=4>1. 本模型所用头像，形象，语音等等的所有权均归米哈游所有。只可用于二次创作/配音。不得创作任何违反法律法规的内容，不得用于任何商业用途，不得二次配布；<br>2. 发视频请注明 **模型训练者** 、**整合包作者**（如果用到了整合包）、**在线推理链接**（如果用到了在线推理）；<br>3. 后续会添加更多的API支持；<br>4. 访问令牌仅显示一次，刷新后需要重新获取，所以生成后一定要保存到安全的位置</font>") 
                         gr.Markdown("# <center>相关信息</center>") 
-                        gr.Markdown("<font size=4>**AI Hobbyist Github：**[https://github.com/AI-Hobbyist](https://github.com/AI-Hobbyist)<br>**AI Hobbyist 主页：**[https://www.ai-hobbyist.com](https://www.ai-hobbyist.com)<br>**模型训练：**[红血球AE3803](https://space.bilibili.com/6589795)<br>**后端开发：**[红血球AE3803](https://space.bilibili.com/6589795)<br>**所用数据集：**[原神 & 星穹铁道AI素材合集](https://www.bilibili.com/read/cv35926092)<br>**交流群：**[点击链接加入群聊【AI Hobbyist 交流群】](hhttps://qm.qq.com/q/Wk8BEF5ROC)</font>")               
+                        gr.Markdown("<font size=4>**AI Hobbyist Github：**[https://github.com/AI-Hobbyist](https://github.com/AI-Hobbyist)<br>**AI Hobbyist 主页：**[https://www.ai-hobbyist.com](https://www.ai-hobbyist.com)<br>**模型训练：**[红血球AE3803](https://space.bilibili.com/6589795)、[白菜工厂1145号员工](https://space.bilibili.com/518098961)<br>**后端开发：**[红血球AE3803](https://space.bilibili.com/6589795)<br>**所用数据集：**[原神 & 星穹铁道AI素材合集](https://www.bilibili.com/read/cv35926092)<br>**交流群：**[点击链接加入群聊【AI Hobbyist 交流群】](hhttps://qm.qq.com/q/Wk8BEF5ROC)</font>")               
                 with gr.Row():
                     with gr.Tab("访问令牌"):
                         with gr.Row():
